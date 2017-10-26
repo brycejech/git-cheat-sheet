@@ -10,7 +10,7 @@ Command                    | Description
 `git status`               | Show the current state of the repo, including changed and uncommitted files
 `git log`                  | Output the commit history
 `git log --oneline`        | Same as above but one line for each commit and a shortened hash
-`git log --pretty=oneline` | Same as above but with the full hash
+`git log --pretty=oneline` | Same as above but outputs the full hash
 
 
 ## Branching
