@@ -26,6 +26,7 @@ Command                                   | Description
 `git push -d <remote name> <branch name>` | Delete a remote branch
 `git push <remote name> <branch name>`    | Push to a remote branch, will publish a new remote branch if one doesn't already exist
 
+
 ## Stashing changes
 
 Command                      | Description
@@ -38,3 +39,17 @@ Command                      | Description
 `git stash pop`              | Apply the most recently created stash then delete it. _(Optional stash@{n} param)_
 `git stash clear`            | Delete all stashes on the stack
 `git stash drop`             | Delete the stash on the top of the stack. _(Optional stash@{n} param)_
+
+## Tagging
+
+Command | Description
+------- | -----------
+`git tag` | List all the current tags
+`git tag -l "<pattern>"` | Search for a tag with a wildcard search _e.g. v1.8.\*_
+`git tag -a <tag> -m "<message>"` | Created an annotated tag
+`git tag <tag>` | Create a lightweight tag _(does not include tagger info or message)_
+`git push origin <tag>` | Publish a tag to remote named origin
+`git push origin --tags` | Publish all tags to remote named origin
+`git tag --delete <tag>` | Delete a local tag
+`git push origin :<tag>` | Delete a remote tag _(pushes empty reference to remote tag)_
+`git push --delete origin <tag>` | Delete a remote tag, more expressive than above
