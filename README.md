@@ -53,3 +53,31 @@ Command | Description
 `git tag --delete <tag>` | Delete a local tag
 `git push origin :<tag>` | Delete a remote tag _(pushes empty reference to remote tag)_
 `git push --delete origin <tag>` | Delete a remote tag, more expressive than above
+
+
+## Uh-oh
+
+### Remove all traces of a file from git history
+
+If you've accidentally added a file to the repo that should not be there, e.g. security related files, user names/passwords, etc, and have made several commits since adding the file, the `git filter-branch` command can be your friend.
+
+`git filter-branch --index-filter 'git rm --cached --ignore-unmatch <filename>'`
+
+The `--ignore-unmatch` in the inner command means that git won't fail if the given filename is missing from any given change.
+You can optionally use `--tree-filter` instead of `--index-filter`. `--index-filter` is very similar to `--tree-filter` except that it does not check out the tree, giving a performance boost.
+
+[filter-branch man page](https://gitirc.eu/git-filter-branch.html)
+
+## Troubleshooting
+
+### Permissions
+
+If getting a 404 when attempting to push to a repo, it may be that you don't have permission or that the repo is simply not configured properly.
+
+If you do not have the ability to use ssh, you can modify the remote reference url to include your username and, optionally, your password. Note that if you must use an `@` symbol in your username, it must be URL encoded as `%40`. All special characters in the username/password string should be safely URL encoded.
+
+`git remote set-url origin https://username@github.com/path/to/repo.git`
+
+To include your password (not recommended) the command would look like this:
+
+`git remote set-url origin https://username:password@github.com/path/to/repo.git`
