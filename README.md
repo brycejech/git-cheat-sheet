@@ -46,7 +46,9 @@ Command | Description
 ------- | -----------
 `git tag` | List all the current tags
 `git tag -l "<pattern>"` | Search for a tag with a wildcard search _e.g. v1.8.\*_
+`git show-ref --tags` | List all tags with the commit they point to
 `git tag -a <tag> -m "<message>"` | Created an annotated tag
+`git tag -a <tag> -m "<message>" <hash>` | Create an annotated tag pointing to a specific hash
 `git tag <tag>` | Create a lightweight tag _(does not include tagger info or message)_
 `git push origin <tag>` | Publish a tag to remote named origin
 `git push origin --tags` | Publish all tags to remote named origin
