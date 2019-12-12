@@ -70,6 +70,11 @@ You can optionally use `--tree-filter` instead of `--index-filter`. `--index-fil
 
 [filter-branch man page](https://gitirc.eu/git-filter-branch.html)
 
+
+### Change author name/email for all commits
+
+`git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Bryce Jech'; GIT_AUTHOR_EMAIL='bryce@brycejech.com'; GIT_COMMITTER_NAME='Bryce Jech'; GIT_COMMITTER_EMAIL='bryce@brycejech.com';" HEAD`
+
 ## Troubleshooting
 
 ### Permissions
