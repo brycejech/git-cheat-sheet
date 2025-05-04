@@ -131,6 +131,47 @@ two references (branch, commit, tag, etc) - _Order matters when using `--name-st
 | `git config --list`               | List all non-default config settings                  |
 | `git config --list --show-origin` | List all non-default settings and their file location |
 
+### .gitconfig
+
+```.gitconfig
+[user]
+	name = Bryce Jech
+	email = bryce.jech@gmail.com
+
+[credential]
+	helper = osxkeychain
+
+[core]
+	editor = nvim
+	pager = less -FX
+	ignorecase = false
+	autocrlf = input
+	eol = lf
+
+[pager]
+	branch = false
+
+[pull]
+	rebase = true
+
+[init]
+	defaultBranch = main
+
+[pretty]
+	col = "%C(#00a1ff)%<(12,trunc)%an%C(reset) %C(#e500ff)%as%C(reset) %C(#ffff00)%h%C(reset) %<(60,trunc)%s"
+```
+
+### .gitattributes
+
+As early in the history of a repository as possible (preferably as part of the initial commit) add a
+`.gitattributes` file to the repository root directory with the following contents. Setting
+`text=auto` for all files is essentially the same as setting `core.autocrlf=input` in a local/global
+user config file.
+
+```.gitattributes
+* text=auto
+```
+
 ---
 
 ## Uh-oh
@@ -153,6 +194,8 @@ giving a performance boost.
 ### Change author name/email for all commits
 
 `git filter-branch -f --env-filter "GIT_AUTHOR_NAME='Bryce Jech'; GIT_AUTHOR_EMAIL='bryce@brycejech.com'; GIT_COMMITTER_NAME='Bryce Jech'; GIT_COMMITTER_EMAIL='bryce@brycejech.com';" HEAD`
+
+---
 
 ## Troubleshooting
 
