@@ -66,6 +66,23 @@ git log --oneline -1 `git merge-base branch1 branch2`
 
 ---
 
+## Searching
+
+### Show files changed between references
+
+```zsh
+git diff-tree ref1..ref2
+```
+
+Use recursive flag, `-r`, to list files changed in subdirectories.
+
+`--name-status` flag fill output the name and status (add, remove, modify) of files changed between
+two references (branch, commit, tag, etc) - _Order matters when using `--name-status`._
+
+`--name-only` will output only the names of files changed.
+
+---
+
 ## Stashing changes
 
 | Command                      | Description                                                                        |
