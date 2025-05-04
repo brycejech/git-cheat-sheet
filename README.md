@@ -107,6 +107,15 @@ git log --oneline -1 `git merge-base branch1 branch2`
 
 ---
 
+## Configuration
+
+| Command                           | Description                                           |
+| --------------------------------- | ----------------------------------------------------- |
+| `git config --list`               | List all non-default config settings                  |
+| `git config --list --show-origin` | List all non-default settings and their file location |
+
+---
+
 ## Uh-oh
 
 ### Remove all traces of a file from git history
