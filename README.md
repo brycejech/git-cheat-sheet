@@ -97,6 +97,14 @@ git log --oneline -1 `git merge-base branch1 branch2`
 | `git push origin :<tag>`                 | Delete a remote tag _(pushes empty reference to remote tag)_         |
 | `git push --delete origin <tag>`         | Delete a remote tag, more expressive than above                      |
 
+## Remote repositories
+
+| Command                                      | Description                                    |
+| -------------------------------------------- | ---------------------------------------------- |
+| `git remote -v`                              | List all remote repos and their push/pull URLs |
+| `git remote add <remote_name> <url>`         | Add a new remote repo                          |
+| `git remote set-url <remote_name> <new_url>` | Update the URL for a remote repo               |
+
 ---
 
 ## Uh-oh
